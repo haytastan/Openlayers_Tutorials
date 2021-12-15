@@ -2,8 +2,11 @@ window.onload = init;
 function init(){
     const map = new ol.Map({
         view: new ol.View({
-            center: [0,0],
-            zoom: 2
+            center: [3949880.2190860063, 4683947.3186397115],
+            zoom: 7,
+            maxZoom:10,
+            minZomm:4,
+            rotation: 0.5
         }),
         layers: [
             new ol.layer.Tile({
@@ -11,5 +14,8 @@ function init(){
             })
         ],
         target: 'js-map'
+    })
+    map.on('click', function(e){
+        console.log(e.coordinate);  
     })
 }
